@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Poppins:wght@600&display=swap');
+
+header {
+  padding: 15px 75px 0 75px;
+  height: 68px;
+  background: linear-gradient(
+    180deg,
+    #081c42 0%,
+    rgba(15, 105, 170, 0.62) 100%
+  );
+}
+
+.firedev-nav-content {
+  color: #fff;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.firedev-menu-content {
+  font-family: 'Poppins';
+  width: 440px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.firedev-nav-search {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.firedev-nav-search input {
+  width: 241px;
+  height: 39px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 5px;
+  margin-right: 30px;
+}
+
+.firedev-nav-search img {
+  width: 28px;
+  height: 24.51px;
+  margin-left: 110px;
+}
+
+/*
+const [animeData, setAnimeData] = useState('')
+
+  const handleAPI = () => {
+    fetch(`https://kitsu.io/api/edge/trending/animes`)
+      .then(response => response.json())
+      .then(animeResponse => setAnimeData(animeResponse))
+  }
+
+  console.log(animeData)
+*/

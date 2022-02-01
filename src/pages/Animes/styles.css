@@ -1,0 +1,19 @@
+h3 {
+    font-family: 'DM sans';
+    font-size: 32px;
+  
+    margin-top: 68px;
+    margin-left: 82px;
+    margin-bottom: 110px;
+  }
+  
+  .firedev-animes-content {
+    margin-left: 82px;
+  }
+  
+  .firedev-animes-content button {
+    background: #0a1325;
+    border: none;
+    color: white;
+  }
+  
