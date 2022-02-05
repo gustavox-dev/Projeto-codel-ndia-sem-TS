@@ -9,6 +9,10 @@ h3 {
   
   .firedev-animes-content {
     margin-left: 82px;
+    display: flex;
+
+    flex-flow: row wrap;
+    align-content: center;
   }
   
   .firedev-animes-content button {
