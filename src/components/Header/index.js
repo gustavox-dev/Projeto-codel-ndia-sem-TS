@@ -1,29 +1,12 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import LogoFireDev from '../../assets/images/logo.png'
-import HeartIcon from '../../assets/images/heartFavorites.png'
-import SearchInput from '../Input'
+
 import './styles.css'
-import { useState } from 'react'
 
 const api = 'https://kitsu.io/api/edge/'
 
-function Navbar() {
-    const [info, setInfo] = useState({})
-    const [text, setText] = useState('')
-    
-    useEffect(() => {
-        if(text) {
-            fetch(`${api}/anime?filter[text]=${text}&page[limit]=12`)
-                .then((response) => response.json())
-                .then((response) => {
-                    setInfo(response)
-                    
-                })
-        }
-
-    }, [text])
-
+function Navbar({children}) {
     return(
         <>
         <header>
@@ -39,21 +22,13 @@ function Navbar() {
                         </Link>
                     </div>
                     <div className="firedev-nav-search">
-                        <SearchInput
-                            value={text}
-                            onChange={(search) => setText(search)} />
-
-                        <img src={HeartIcon} alt="" />
+                        {children}
                     </div>
 
                 </div>
             </nav>
 
         </header>
-        
-        <div>
-        
-        </div>
         
         </>
     )

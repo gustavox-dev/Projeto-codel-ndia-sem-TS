@@ -1,0 +1,14 @@
+button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+button .like-button {
+    color: #737380;
+}
+
+
+input { 
+    padding: 10px;
+    color: white;
+}

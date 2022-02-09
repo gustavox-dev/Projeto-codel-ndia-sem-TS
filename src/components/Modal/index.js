@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './styles.css'
 import HeartRed from '../../assets/images/heartRed.png'
 
 const Modal = ({ anime, onClose, value }) => {
-    
-    console.log(anime)
 
     return (
         <div key={value} className='firedev-modal' onClick={onClose}>

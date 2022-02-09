@@ -1,16 +1,26 @@
-import React from 'react'
+import React from "react";
+import './styles.css'
 
-const SearchInput = ({value, onChange}) => {
+const SearchInput = ({value, onChange, children, onClose}) => {
+
     function handleChange(event) {
         onChange(event.target.value)
     }
 
     return (
-        <input
-            type="search"
-            value={value}
-            onChange={handleChange}
-        />
+        <>
+            <input
+                className="inputSearch"
+                type="search"
+                value={value}
+                onChange={handleChange}
+                onClick={onClose}
+            >
+            </input>
+            <div>
+                {children}
+            </div>
+        </>
     )
 
 }
