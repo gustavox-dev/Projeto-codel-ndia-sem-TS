@@ -12,3 +12,9 @@ input {
     padding: 10px;
     color: white;
 }
+
+.input-item {
+    display: flex;
+    align-items: center;
+}
+

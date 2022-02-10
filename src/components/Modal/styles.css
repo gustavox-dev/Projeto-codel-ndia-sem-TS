@@ -1,5 +1,4 @@
 
-
 .firedev-modal {
     width: 70vw;
     min-width: 450px;
@@ -39,30 +38,31 @@
     justify-content: space-between;
 }
 
+
 .firedev-img img {
     width: 40vh;
     height: 50vh;
-
+    max-width: 500px;
     padding-right: 38px;
     padding-left: 10px;
     border-radius: 4.2px;
 }
 
 .firedev-modal-content {
-    width: 80vw;
-    height: 70%;
-    max-width: 500px;
+    width: 80vh;
+    
     
     font-size: 1.4vh;
 
     display: flex;
 
     flex-direction: column;
+    max-width: 500px;
 }
 
 .header-text-modal {
     width: 45vh;
-    
+    max-width: 500px;
     display: flex;
     
     justify-content: space-between;
@@ -101,4 +101,13 @@
 
 .content-modal h2 {
     margin-top: 20px;
+}
+
+.close-btn {
+    width: 30vw;
+    color: black;
+    border: 1px solid red;
+    display: flex;
+
+    flex-direction: row-reverse;
 }

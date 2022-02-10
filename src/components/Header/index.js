@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import LogoFireDev from '../../assets/images/logo.png'
 
@@ -14,7 +14,7 @@ function Navbar({children}) {
                 <div className="firedev-nav-content">
                     <div className="firedev-menu-content">
                         <img src={LogoFireDev} alt="" />
-                        <Link className='firedev-link' to={`/anime`}>
+                        <Link className='firedev-link' to={`/`}>
                             <p>Anime</p>
                         </Link>
                         <Link className='firedev-link' to={`/manga`}>
