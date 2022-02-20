@@ -13,13 +13,16 @@ function Navbar({children}) {
             <nav>
                 <div className="firedev-nav-content">
                     <div className="firedev-menu-content">
-                        <img src={LogoFireDev} alt="" />
+                        <img className='firedev-logoImg' src={LogoFireDev} alt="" />
+
                         <Link className='firedev-link' to={`/`}>
                             <p>Anime</p>
                         </Link>
+
                         <Link className='firedev-link' to={`/manga`}>
                             <p>Manga</p>
                         </Link>
+                        
                     </div>
                     <div className="firedev-nav-search">
                         {children}

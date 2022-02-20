@@ -1,12 +1,13 @@
 
 .firedev-modal {
-    width: 70vw;
-    min-width: 450px;
-    max-width: 850px;
-    height: 60vh;
-    min-height: 270px;
+    width: 85%;
+    min-width: 350px;
+    max-width: 890px;
 
-    padding: 13px;
+    height: 45%;
+    min-height: 230px;
+
+    padding: 5% 13px 5% 13px;
     
     font-family: 'Poppins';
     font-size: 1.1vh;
@@ -16,8 +17,8 @@
     background: #F3F2F2;
     
     position: fixed;
-    top: 25%;
-    left: 20%;
+    top: 25vh;
+    left: 5vw;
     
     display: flex;
 
@@ -27,10 +28,17 @@
 }
 
 .firedev-modal-wrapper {
-    height: 72vh;
+    /* border: 1px solid red; */
+    
     width: 100%;
+    min-width: 330px;
+    max-width: 890px;
 
-    font-size: 1.1vw;
+    height: 100%;
+    object-fit: cover;
+
+    
+    font-size: 1vh;
 
     display: flex;
 
@@ -38,31 +46,49 @@
     justify-content: space-between;
 }
 
+.firedev-img {
+    /* border: 1px solid green; */
+    width: 100%;
+    height: 100%;
+    
+    min-width: 170px;
+    min-height: 280px;
+    
+    
+    padding-left: 1vw;
+    padding-right: 1vw;
+    
+    display: flex;
+
+    align-items: center;
+    
+}
 
 .firedev-img img {
-    width: 40vh;
-    height: 50vh;
-    max-width: 500px;
-    padding-right: 38px;
-    padding-left: 10px;
     border-radius: 4.2px;
+    width: 100%;
+    height: 100%;
+    /* max-width: 500px; */
+    
 }
 
 .firedev-modal-content {
-    width: 80vh;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    max-width: 890px;
     
-    
-    font-size: 1.4vh;
 
     display: flex;
 
     flex-direction: column;
-    max-width: 500px;
+    /* max-width: 500px; */
 }
 
 .header-text-modal {
-    width: 45vh;
-    max-width: 500px;
+    /* border: 1px solid red; */
+    width: 90%;
+    height: 20%;
     display: flex;
     
     justify-content: space-between;
@@ -74,20 +100,19 @@
 }
 
 .header-text-modal h1 {
-    font-weight: 700;
-    font-size: 2vw;
-    max-width: 500px;
-    
+    font-weight: 700;    
+    padding-right: 5%;
 }
 
 .content-modal {
-    width: 45vw;
+    /* width: 45vw; */
+    width: 80%;
     height: 40vh;
-    font-size: 1vw;
+    font-size: 1vh;
     max-width: 500px;
     margin-top: 20px;
     
-    padding-right: 90px;
+    padding-right: 10px;
     display: flex;
 
     flex-direction: column;
@@ -104,9 +129,10 @@
 }
 
 .close-btn {
-    width: 30vw;
+    
+    width: 96%;
     color: black;
-    border: 1px solid red;
+    
     display: flex;
 
     flex-direction: row-reverse;

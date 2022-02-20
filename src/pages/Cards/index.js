@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import './styles.css'
 import Modal from '../../components/Modal/index'
 
-const CardContent = ({ anime, value }) => {
+const CardContent = ({ anime, value, image, title, ranking, eps, synopse }) => {
     const [isModalVisible, setIsModalVisible] = useState(false)
+    // const [favorites, setFavorites] = useState([anime])
+
+    // function handleAddItem(value, attributes) {
+    //     const itemObject = { value, attributes }
+    //     setFavorites([...favorites, itemObject])
+    // }
+    // console.log(favorites)
     
     return(
         <div className='container-card-list'>
@@ -13,18 +20,24 @@ const CardContent = ({ anime, value }) => {
                         key={value} 
                         value={value}
                         className='anime-images' 
-                        src={anime.attributes.posterImage.small} 
-                        alt={anime.attributes.canonicalTitle} 
+                        src={image} 
+                        alt={title} 
                         onClick={() => {setIsModalVisible(true)}}
                     />
                 </div>
             <div>
-                <p>{anime.attributes.canonicalTitle}</p>				
+                <p>{title}</p>				
             </div>
             {isModalVisible ? 
                 <Modal 
-                    id={anime.attributes.id}
+                    valueId={value}
                     anime={anime} 
+                    image={image}
+                    title={title}
+                    position={ranking}
+                    eps={eps}
+                    synopse={synopse}
+                    // handleAddItem={handleAddItem()}
                     onClose={() => setIsModalVisible(false)} 
             /> : null}                           
 

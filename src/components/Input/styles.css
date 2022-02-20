@@ -1,20 +1,40 @@
+.input-item {
+    display: flex;
+    
+    align-items: center;
+}
+
+
+span {
+    /* border: 1px solid red; */
+    position: relative;
+    left: 14vw;
+}
+
+.searchBtn {
+    width: 1vw;
+    height: 1vw;
+    margin-top: 6px;
+}
+
 button {
     border: 0;
     background: transparent;
     cursor: pointer;
 }
+
 button .like-button {
     color: #737380;
 }
 
 
-input { 
-    padding: 10px;
+.inputSearch { 
+    width: 14.5vw;
+    min-width: 102px;
+    height: 2.7vh;
+    min-height: 16px;
     color: white;
+    
 }
 
-.input-item {
-    display: flex;
-    align-items: center;
-}
 

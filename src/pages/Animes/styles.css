@@ -8,6 +8,8 @@ h3 {
   }
   
   .firedev-navbar {
+    width: 100%;
+    /* border: 1px solid red; */
     background: linear-gradient(
       180deg,
       #081c42 0%,
@@ -27,6 +29,11 @@ h3 {
 
     flex-flow: row wrap;
     align-content: center;
+  }
+
+  .heart {
+    width: 2vw;
+    height: 2vw;
   }
   
   

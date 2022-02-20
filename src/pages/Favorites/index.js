@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+
 import axios from 'axios'
 
 import Navbar from '../../components/Header/index';
 import SearchInput from '../../components/Input'
+import Modal from '../../components/Modal'
 import CardContent from '../Cards/index';
+import HeartIconRed from '../../assets/images/heartRed.png'
 
-import HeartIcon from '../../assets/images/heartRed.png';
+
 
 const BASE_URL = 'https://kitsu.io/api/edge/';
 
-function FavoritesPage ()  {
-    const [anime, setAnime] = useState([])
-  
+function Favorites() {
+  const [anime, setAnime] = useState([])
   const [info, setInfo] = useState({})
   const [text, setText] = useState('')
+  const [isModalVisible, setIsModalVisible] = useState(false)
+
+  let lsItems = JSON.parse(localStorage.getItem('favorites'))
+  console.log(lsItems)
 
   useEffect(() => { 
     const res =  axios.get(`${BASE_URL}trending/anime`)
@@ -23,7 +29,7 @@ function FavoritesPage ()  {
             setAnime(animeResponse)
         })
     if(text) {
-      fetch(`${BASE_URL}anime?filter[text]=${text}&page[limit]=12`)
+      fetch(`${BASE_URL}anime?filter[text]=${text}&page[limit]=14`)
         .then((response) => response.json())
         .then((response) => {
           setInfo(response)
@@ -40,7 +46,7 @@ function FavoritesPage ()  {
         {info.data && 
             <div className="firedev-animes-content">
               {info.data.map(animes => (
-                  <CardContent key={animes.id} value={animes.id} anime={animes.attributes}/>
+                  <CardContent key={animes.id} value={animes.id} anime={animes} attributes={animes.attributes}/>
                 
               ))}
             </div>
@@ -49,23 +55,71 @@ function FavoritesPage ()  {
     )
   }
 
+
+  /**
+   * {lsItems.map(animes => {
+            const {id, image, titulo, position, synopse, eps} = animes
+            return (
+              <>
+                <div className='container-card-list'>
+            <div className="firedev-cards-content" >
+                <div>
+                    <img 
+                        key={id} 
+                        value={id}
+                        className='anime-images' 
+                        src={image} 
+                        alt={titulo} 
+                        onClick={() => {setIsModalVisible(true)}}
+                    />
+                </div>
+            <div>
+                <p>{titulo}</p>				
+            </div>
+            {isModalVisible ? 
+                <Modal 
+                    id={id}
+                    anime={anime} 
+                    image={image}
+                    title={titulo}
+                    position={position}
+                    synopse={synopse}
+                    eps={eps}
+                    // handleAddItem={handleAddItem()}
+                    onClose={() => setIsModalVisible(false)} 
+            /> : null}                           
+
+            </div>
+        </div>
+              </>
+            )
+          })}
+   */
   const filterAnime = () => {
 
     return(
       <>
-        {anime.data && 
+        
           <div className="firedev-animes-content">
 
-          {anime.data.map(animes => {
-            const {attributes, id} = animes
+          {lsItems.map(favoriteList => {
+            const {id, image, titulo, position, synopse, eps} = favoriteList
 
             return (
-              <CardContent key={id} value={id} anime={attributes}/>
+              <CardContent 
+                key={id} 
+                value={id}                
+                image={image}
+                title={titulo}
+                ranking={position}
+                eps={eps}
+                synopse={synopse}
+              />
             )
           })}
           
           </div>
-        }
+        
       </>
     )
   }
@@ -84,31 +138,22 @@ function FavoritesPage ()  {
   return (
     <div>
       <div className='firedev-navbar'>
-          <Navbar anime={anime}>
-            <SearchInput
+        <Navbar anime={anime}>
+          <SearchInput
               value={text}
               onChange={(search) => setText(search)}
               animes={anime}
             >
-                
-              <button 
-                src={HeartIcon}
-                type="button"
-                aria-label='Favoritos'
-              >
-                <Link to={'/favoritos'}>
-                  <svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25.0688 2.46457C21.9078 -0.193247 17.0242 0.205971 14 3.28488C10.9758 0.205971 6.09219 -0.198716 2.93126 2.46457C-1.18124 5.92628 -0.579681 11.57 2.35157 14.5614L11.9438 24.3341C12.4906 24.8919 13.2234 25.2036 14 25.2036C14.782 25.2036 15.5094 24.8974 16.0563 24.3396L25.6484 14.5669C28.5742 11.5755 29.1867 5.93175 25.0688 2.46457Z" fill="#FAFAFA"/>
-                  </svg>
-                </Link>
-
-              </button>
+              <Link to={'/favoritos'}>
+                <img className='heart' src={HeartIconRed} alt=''/>
+              </Link>
+              
 
             </SearchInput>
           </Navbar>
         </div>
         <div>
-          <h3>Animes mais populares</h3>
+          <h3>Seus animes favoritos</h3>
         </div>
         {text && !info.data && (
           <span>Carregando... </span>
@@ -116,7 +161,6 @@ function FavoritesPage ()  {
         {filterResult()}
     </div>
   );
-
 }
 
-export default FavoritesPage
+export default Favorites;

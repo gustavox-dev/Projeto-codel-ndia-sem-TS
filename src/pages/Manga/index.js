@@ -62,7 +62,7 @@ function Manga() {
             const {attributes, id} = mangas
 
             return (
-              <CardContent key={id} value={id} anime={attributes}/>
+              <CardContent key={id} value={id} anime={mangas} attributes={attributes}/>
             )
           })}
           

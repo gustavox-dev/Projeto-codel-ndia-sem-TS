@@ -1,18 +1,58 @@
 .like-button {
     background: transparent;
     cursor: pointer;
+    
+    width: 10%;
+    height: 60%;
+    border: 1px solid red;
 }
 
 .button-heart {
-    width: 28px;
-    height: 26px;
+    width: 2vw;
+    height: 2vw;
+    border: 1px solid green;
 }
 
-button .like-button {
-    color: #737388;
-}
+
 
 svg path .liked {
     fill: red;
 }
 
+.div-heart {
+    width: 30px;
+    background-color: red;
+    transform: rotate(-45deg);
+    height: 30px;
+    border: 1px solid red;
+}
+
+.div-heart:before,
+.div-heart:after {
+    border: 1px solid red;
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+}
+
+.div-heart:before {
+    top: -3px;
+    left: 12px;
+}
+
+.div-heart:after {
+    top: -15px;
+    left: -1px;
+}
+
+/* content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 200px;
+  position: absolute;
+  width: 200px;
+} 
+*/

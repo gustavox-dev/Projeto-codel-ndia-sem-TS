@@ -3,7 +3,7 @@ import './styles.css'
 import useDebounce from './Debounce'
 import searchIcon from '../../assets/images/search.png'
 
-const SearchInput = ({value, onChange, children}) => {
+const SearchInput = ({value, onChange, children, onClose}) => {
     const [displayValue, setDisplayValue] = useState(value)
     const debouncedChange = useDebounce(onChange, 500)
 
@@ -15,14 +15,17 @@ const SearchInput = ({value, onChange, children}) => {
     return (
         <>
             <div className="input-item">
-                <label className="searchBtn">
-                    <img src={searchIcon} />
+                <label>
+                    <span>
+                        <img className="searchBtn" src={searchIcon} />
+                    </span>
                 </label>
                 <input
                     className="inputSearch"
                     type="search"
                     value={displayValue}
                     onChange={handleChange}
+                    onClick={onClose}
                 />
             </div>
             <div>
