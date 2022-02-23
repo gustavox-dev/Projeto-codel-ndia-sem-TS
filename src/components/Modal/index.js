@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import './styles.css'
 import ButtonComponent from '../../components/Button'
+import StarIcon from '../../assets/images/star.png'
 
 // 1 - Criar um Array vazio para inserir os dados do localStorage. 
-function Modal({ valueId, onClose, image, title, position, eps, synopse }) {
+function Modal({ valueId, onClose, image, title, position, eps, synopse, averageRating }) {
     // let favorites = JSON.parse(localStorage.getItem('favorites')) || []
     
     /*
@@ -29,13 +30,12 @@ function Modal({ valueId, onClose, image, title, position, eps, synopse }) {
                 </div>
 
                 <div className='firedev-modal-content'>
-
-                    <div className='close-btn'>
+                    {/* <div className='close-btn'>
                         <button onClick={onClose}>X</button>
-                    </div>
+                    </div> */}
 
                     <div className='header-text-modal'>
-                        <h1>{title}</h1>    
+                        <h3>{title}</h3>    
                         <ButtonComponent
                             valueId={valueId}
                             img={image}
@@ -47,14 +47,27 @@ function Modal({ valueId, onClose, image, title, position, eps, synopse }) {
                     </div>
 
                     <div className='content-modal'>
-                        <p>Posição: {position}</p>
-                        <p>Capitulos/Episódios: {eps}</p>
 
+                        <div className='average-content'>
+                            <p>Posição: {position}</p>
+                            <div className='rate'>
+                                <p>
+                                    <img src={StarIcon} alt='Avaliações' />
+                                    Avaliação: {averageRating}
+                                </p>
+                                
+                            </div>
+                        </div>
+
+                        <p className='eps-content'>Capitulos/Episódios: {eps}</p>
                         <h2>Sinopse</h2>
 
-                        <p>
-                            {synopse}
-                        </p>
+                        <div className='synopse'>
+                            <p>
+                                {synopse}
+                            </p>
+                        </div>
+
                     </div>
 
 

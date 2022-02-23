@@ -1,20 +1,7 @@
-.input-item {
-    display: flex;
-    
-    align-items: center;
-}
-
-
 span {
     /* border: 1px solid red; */
     position: relative;
-    left: 14vw;
-}
-
-.searchBtn {
-    width: 1vw;
-    height: 1vw;
-    margin-top: 6px;
+    left: 110px;
 }
 
 button {
@@ -27,14 +14,29 @@ button .like-button {
     color: #737380;
 }
 
+.input-item {
+    /* border: 1px solid red; */
+    
+    width: 150px;
+    display: flex;
+    
+    align-items: center;
+}
+
+.searchBtn {
+    width: 1em;
+    height: 1em;
+    margin-top: 6px;
+}
 
 .inputSearch { 
-    width: 14.5vw;
+    width: 100%;
     min-width: 102px;
     height: 2.7vh;
     min-height: 16px;
     color: white;
-    
 }
 
-
+.children-content {
+    margin-left: 15px;
+}

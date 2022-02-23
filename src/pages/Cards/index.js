@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './styles.css'
 import Modal from '../../components/Modal/index'
 
-const CardContent = ({ anime, value, image, title, ranking, eps, synopse }) => {
+const CardContent = ({ anime, value, image, title, ranking, eps, synopse, averageRating }) => {
     const [isModalVisible, setIsModalVisible] = useState(false)
     // const [favorites, setFavorites] = useState([anime])
 
@@ -25,23 +25,25 @@ const CardContent = ({ anime, value, image, title, ranking, eps, synopse }) => {
                         onClick={() => {setIsModalVisible(true)}}
                     />
                 </div>
-            <div>
-                <p>{title}</p>				
-            </div>
-            {isModalVisible ? 
-                <Modal 
-                    valueId={value}
-                    anime={anime} 
-                    image={image}
-                    title={title}
-                    position={ranking}
-                    eps={eps}
-                    synopse={synopse}
-                    // handleAddItem={handleAddItem()}
-                    onClose={() => setIsModalVisible(false)} 
-            /> : null}                           
+                <div>
+                    <p>{title}</p>				
+                </div>
+               
 
             </div>
+            {isModalVisible ? 
+                        <Modal 
+                            valueId={value}
+                            anime={anime} 
+                            image={image}
+                            title={title}
+                            position={ranking}
+                            eps={eps}
+                            synopse={synopse}
+                            averageRating={averageRating}
+                            // handleAddItem={handleAddItem()}
+                            onClose={() => setIsModalVisible(false)} 
+                    /> : null} 
         </div>
     )
 

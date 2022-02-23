@@ -11,15 +11,6 @@ const ButtonComponent = ({ valueId, img, title, position, eps, synopse}) => {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || []
 
     
-    
-
-    
-   
-
-    /**
-     * 1º Confere para ver se o valor do estado "like" está como "true"
-     * 2º Se estiver "true" retorna a imagem com o coração vermelho. 
-     */
     const checkFavorite = () => {
         const imageContainer = document.getElementById("btn-heart")
         
@@ -42,6 +33,7 @@ const ButtonComponent = ({ valueId, img, title, position, eps, synopse}) => {
         const favoritesFiltrado = favorites.filter(function (a) {
             return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
         }, Object.create(null))
+        console.log("Favorites filtrado = ", favoritesFiltrado.id)
 
         setFavoriteList(favoritesFiltrado)
              
@@ -51,7 +43,7 @@ const ButtonComponent = ({ valueId, img, title, position, eps, synopse}) => {
     
         favorites = favoritesFiltrado
         
-        const existInFavorites = favoritesFiltrado.indexOf({})
+        const existInFavorites = favoritesFiltrado.indexOf(valueId)
 
         console.log("Existe dentro do array? ", existInFavorites)
 

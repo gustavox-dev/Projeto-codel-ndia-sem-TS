@@ -5,11 +5,8 @@ import axios from 'axios'
 
 import Navbar from '../../components/Header/index';
 import SearchInput from '../../components/Input'
-import Modal from '../../components/Modal'
 import CardContent from '../Cards/index';
 import HeartIconRed from '../../assets/images/heartRed.png'
-
-
 
 const BASE_URL = 'https://kitsu.io/api/edge/';
 
@@ -17,7 +14,7 @@ function Favorites() {
   const [anime, setAnime] = useState([])
   const [info, setInfo] = useState({})
   const [text, setText] = useState('')
-  const [isModalVisible, setIsModalVisible] = useState(false)
+  
 
   let lsItems = JSON.parse(localStorage.getItem('favorites'))
   console.log(lsItems)
@@ -55,46 +52,6 @@ function Favorites() {
     )
   }
 
-
-  /**
-   * {lsItems.map(animes => {
-            const {id, image, titulo, position, synopse, eps} = animes
-            return (
-              <>
-                <div className='container-card-list'>
-            <div className="firedev-cards-content" >
-                <div>
-                    <img 
-                        key={id} 
-                        value={id}
-                        className='anime-images' 
-                        src={image} 
-                        alt={titulo} 
-                        onClick={() => {setIsModalVisible(true)}}
-                    />
-                </div>
-            <div>
-                <p>{titulo}</p>				
-            </div>
-            {isModalVisible ? 
-                <Modal 
-                    id={id}
-                    anime={anime} 
-                    image={image}
-                    title={titulo}
-                    position={position}
-                    synopse={synopse}
-                    eps={eps}
-                    // handleAddItem={handleAddItem()}
-                    onClose={() => setIsModalVisible(false)} 
-            /> : null}                           
-
-            </div>
-        </div>
-              </>
-            )
-          })}
-   */
   const filterAnime = () => {
 
     return(

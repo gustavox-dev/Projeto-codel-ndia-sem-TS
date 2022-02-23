@@ -1,35 +1,40 @@
 
 .firedev-modal {
+    margin: 0 auto;
+
     width: 85%;
     min-width: 350px;
     max-width: 890px;
 
-    height: 45%;
+    height: 60vw;
     min-height: 230px;
+    max-height: 507px;
 
-    padding: 5% 13px 5% 13px;
+    padding: 2% 2%;
     
     font-family: 'Poppins';
-    font-size: 1.1vh;
+    
     color: black;
     
     border-radius: 8.5px;
     background: #F3F2F2;
     
     position: fixed;
-    top: 25vh;
-    left: 5vw;
+    top: 237px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     
     display: flex;
 
+    
     justify-content: center;
     align-items: center;
-
 }
+
 
 .firedev-modal-wrapper {
     /* border: 1px solid red; */
-    
     width: 100%;
     min-width: 330px;
     max-width: 890px;
@@ -37,26 +42,27 @@
     height: 100%;
     object-fit: cover;
 
-    
-    font-size: 1vh;
 
     display: flex;
 
     align-items: center;
-    justify-content: space-between;
+    
 }
 
 .firedev-img {
-    /* border: 1px solid green; */
+    
     width: 100%;
+    min-width: 170px;
+    max-width: 317px;
+    
     height: 100%;
+    min-height: 208px;
+    max-height: 420px;
     
     min-width: 170px;
-    min-height: 280px;
+    min-height: 208px;
     
-    
-    padding-left: 1vw;
-    padding-right: 1vw;
+    margin-right: 5%;
     
     display: flex;
 
@@ -67,31 +73,43 @@
 .firedev-img img {
     border-radius: 4.2px;
     width: 100%;
+    min-width: 170px;
+
     height: 100%;
+    min-height: 208px;
     /* max-width: 500px; */
     
 }
 
+
+
 .firedev-modal-content {
     /* border: 1px solid red; */
     width: 100%;
-    height: 100%;
-    max-width: 890px;
+    height: 95%;
     
-
     display: flex;
 
     flex-direction: column;
     /* max-width: 500px; */
 }
 
+.firedev-modal-content a {
+    color: black;
+}
+
 .header-text-modal {
     /* border: 1px solid red; */
-    width: 90%;
-    height: 20%;
-    display: flex;
     
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+
+.header-text-modal h3 {
+    font-weight: bold;    
+    padding-right: 5%;
+    font-size: 27px;
 }
 
 .heart-icon {
@@ -99,33 +117,106 @@
     height: 35px;
 }
 
-.header-text-modal h1 {
-    font-weight: 700;    
-    padding-right: 5%;
-}
 
 .content-modal {
-    /* width: 45vw; */
-    width: 80%;
-    height: 40vh;
-    font-size: 1vh;
-    max-width: 500px;
-    margin-top: 20px;
+    /* border: 1px solid red; */
     
-    padding-right: 10px;
+    
+    max-width: 500px;
+    
     display: flex;
 
-    flex-direction: column;
+    flex-direction: column; 
     align-items: flex-start;
+    justify-content: space-between;    
+    /* border: 1px solid red; */
+}
+
+@media screen and (max-width: 570px) {
+    .header-text-modal h3 {
+        font-size: 18px;
+    }
     
+    .content-modal h2 {
+        font-size: 12px;      
+    }
+
+    .eps-content {
+        border: 1px solid red;
+        display: none;
+    }
+
+    .average-content p{
+        font-size: 8px;
+        display: flex;
+        align-items: center;
+    }
+    .synopse p {
+        font-size: 10px;
+    }
 }
 
 .content-modal p {
-    font-size: 1.5vh;
+    
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    /* margin-top: 5px; */
 }
 
+
 .content-modal h2 {
+    /* border: 1px solid red; */
+    font-weight: 900;
     margin-top: 20px;
+    margin-bottom: 5%;
+    
+}
+
+.average-content {
+    width: 100%;
+    font-size: 0.8em;
+    margin-top: 10px;
+    height: 20%;
+    
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.average-content p {
+    padding: 0;
+    margin: 0;
+}
+
+.eps-content {
+    /* border: 1px solid red; */
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.rate {
+    /* border: 1px solid red; */
+    
+    display: flex;
+
+    align-items: center;
+    
+    justify-content: center;
+}
+
+.synopse {
+    font-weight: 100;
+    /* border: 1px solid red; */
+    height: 13vw;
+    overflow: auto;
+    overflow-x: hidden;
+    font-size: 13px;
+    
 }
 
 .close-btn {
@@ -136,4 +227,16 @@
     display: flex;
 
     flex-direction: row-reverse;
+}
+
+
+.synopse::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+.synopse::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+.synopse::-webkit-scrollbar-thumb {
+    background: #dad7d7;
 }

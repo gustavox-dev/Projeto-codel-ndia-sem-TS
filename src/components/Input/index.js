@@ -28,7 +28,7 @@ const SearchInput = ({value, onChange, children, onClose}) => {
                     onClick={onClose}
                 />
             </div>
-            <div>
+            <div className='children-content'>
                 {children}
             </div>
         </>

@@ -7,12 +7,20 @@
   }
   
   .firedev-cards-content {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
     margin: 0 50px 80px 0;
     width: 142px;
     height: 275px;
-
-}
-
+    
+  }
+  
+  .firedev-modal-card {
+    border: 1px solid red;
+    
+  }
 
 .anime-images {
   border-radius: 5px;
@@ -23,6 +31,6 @@
 .firedev-cards-content p {
   text-align: center;
   font-family: 'DM sans';
-  font-size: 16px;
+  font-size: 1.3em;
   margin-top: 20px;
 }
