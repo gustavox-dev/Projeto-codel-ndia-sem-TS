@@ -32,30 +32,23 @@ const ButtonComponent = ({ valueId, img, title, position, eps, synopse}) => {
     
     useEffect(() => {
         setFavoriteList(favorites)
-        setFind(existsFindTwo)
+        setFind(existsFind)
     }, [])
     
-    // const existsFind = favoriteList.find(findResult => findResult.id === valueId)
-    // favorites = favoriteList
-    const existsFindTwo = favoriteList.find(findResult => {
+    
+    const existsFind = favoriteList.find(findResult => {
         return findResult
     })
     
-    // console.log("ID Modal: ", existsFindTwo.id)
-    
-        //  Busca o id que corresponde a inserção, caso seja igual a um já existente ele exclui. 
-    
-
     const checkFavorite = () => {
         const imageContainer = document.getElementById("btn-heart")
-        
 
         console.log("Valor do find: ", find)
-        // const index = favoriteList.indexOf(objs)
+        // Verifica se existe um objeto com o valor de 'find' dentro da Lista
         const index = favoriteList.indexOf(find)
         
         
-
+        // Se o valor for diferente de -1 o valor será excluído, se não, adicionado. 
         if(index != -1) {
             favoriteList.splice(index)
             imageContainer.src = HeartIcon
@@ -68,79 +61,8 @@ const ButtonComponent = ({ valueId, img, title, position, eps, synopse}) => {
         }
         console.log("Feito o Push: ", favoriteList)
         console.log("INDEX: ", index)
-        // console.log("Index: ", index)
 
-        
-        
-        // const favoritesFiltrado = favorites.filter(function (a) {
-        //     return !this[JSON.stringify(a)] && (this[JSON.stringify(a)] = true);
-        // }, Object.create(null))
-        // console.log("Favoritos filtrado::::::::::: ", favoritesFiltrado)
-        // // if(favoritesFiltrado === true) {
-        // //     console.log("Remove o item")
-        // // }
-
-        // setFavoriteList(favoritesFiltrado)
-             
-        
-
-        // favorites = favoriteList
-
-        // O index OF de dentro da constante verifica se dentro do ARRAY "favorites"
-        // existe um objeto igual o retornado. Se a condição for atendida o objeto é removido 
-        // const existInFavorites = favoriteList.filter(filterResult => {
-        //     const index = favorites.indexOf(filterResult)
-        //     console.log("INDEX: ", index)
-        //     return index
-        //     // if(index == false)  {
-        //     //     favoriteList.splice(index, 1)
-        //     //     console.log("Remove o item")
-        //     //     imageContainer.src = HeartIcon
-        //     // } else {
-        //     //     imageContainer.src = HeartIconRed
-        //     //     console.log("Adiciona o item")
-        //     // }
-        // })
-
-        
-        
-        
-        // Se o resultado for true ele adiciona, se não, remove. 
-        // if(existsFind) {
-        //     favorites.push(objs)
-            
-        //     imageContainer.src = HeartIconRed
-        //     console.log("Adiciona a bagaça")
-        // } else {
-        //     imageContainer.src = HeartIcon
-        //     console.log("Remove po")
-        // }
-
-        // if(favoriteList === true) {
-        //     console.log("Remove o item")
-        // } else {
-        //     console.log("Adiciona o item")
-        // }   
-
-        // console.log("Lista de favoritos: ", favorites)
-        // console.log("Lista de favoritos 2: ", favoritesFiltrado)
-        // console.log("Lista de favoritos 3: ", favoriteList)
-        
-
-        
-            // console.log("Valor index: ", index)
-            // console.log("Valor ID: ", favorites.id)
-            // if(index !== favorites.id) {
-            //     imageContainer.src = HeartIcon
-            //     console.log("Removendo item com splice", favoriteList)
-            // } else {
-            //     imageContainer.src = HeartIconRed
-            //     console.log("Fazendo push no Array favorites: ", favoriteList)
-            // }
-        
-        
-
-        // Inserir o updateLocalStorage
+        // Seta os valores para dentro do localStorage. 
         localStorage.setItem('favorites', JSON.stringify(favoriteList))
     }
     
@@ -161,8 +83,7 @@ const ButtonComponent = ({ valueId, img, title, position, eps, synopse}) => {
             onClose={() => {
                 handleToggleFavorite()
             }}
-            >
-                
+            > 
                 <img id="btn-heart" className="button-heart" src={HeartIcon} onClick={() => checkFavorite()}/>
 
         </button>

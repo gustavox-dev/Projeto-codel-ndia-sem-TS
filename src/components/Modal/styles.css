@@ -240,3 +240,8 @@
 .synopse::-webkit-scrollbar-thumb {
     background: #dad7d7;
 }
+
+.btn-fd {
+    /* border: 1px solid red; */
+    text-align: end;
+}
