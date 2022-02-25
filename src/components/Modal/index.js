@@ -30,6 +30,7 @@ function Modal({ valueId, onClose, image, title, position, eps, synopse, average
                 </div>
 
                 <div className='firedev-modal-content'>
+                <button onClick={onClose}>X</button>
                     {/* <div className='close-btn'>
                         <button onClick={onClose}>X</button>
                     </div> */}
