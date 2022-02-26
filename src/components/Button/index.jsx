@@ -40,12 +40,15 @@ const ButtonComponent = ({ valueId, img, title, position, eps, synopse}) => {
         return findResult
     })
     
+    
+    
     const checkFavorite = () => {
         const imageContainer = document.getElementById("btn-heart")
+        JSON.parse(localStorage.getItem('favorites'))
 
         console.log("Valor do find: ", find)
         // Verifica se existe um objeto com o valor de 'find' dentro da Lista
-        const index = favoriteList.indexOf(find)
+        const index = favoriteList.indexOf(find)    
         
         
         // Se o valor for diferente de -1 o valor será excluído, se não, adicionado. 
@@ -65,7 +68,7 @@ const ButtonComponent = ({ valueId, img, title, position, eps, synopse}) => {
         // Seta os valores para dentro do localStorage. 
         localStorage.setItem('favorites', JSON.stringify(favoriteList))
     }
-    
+
 
 
     /* ======= Altera o "like" para o contrário ao ser executada =======  */

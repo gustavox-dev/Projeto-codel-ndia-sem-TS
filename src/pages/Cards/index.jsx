@@ -11,6 +11,12 @@ const CardContent = ({ anime, value, image, title, ranking, eps, synopse, averag
     //     setFavorites([...favorites, itemObject])
     // }
     // console.log(favorites)
+
+    if(isModalVisible) {
+        console.log("abriu", isModalVisible)
+    } else {
+        console.log("Fechou")
+    }
     
     return(
         <div className='container-card-list'>
@@ -23,6 +29,7 @@ const CardContent = ({ anime, value, image, title, ranking, eps, synopse, averag
                         src={image} 
                         alt={title} 
                         onClick={() => {setIsModalVisible(true)}}
+                        onClose={() => setIsModalVisible(false)}
                     />
                 </div>
                 <div>
@@ -32,18 +39,18 @@ const CardContent = ({ anime, value, image, title, ranking, eps, synopse, averag
 
             </div>
             {isModalVisible ? 
-                        <Modal 
-                            valueId={value}
-                            anime={anime} 
-                            image={image}
-                            title={title}
-                            position={ranking}
-                            eps={eps}
-                            synopse={synopse}
-                            averageRating={averageRating}
-                            // handleAddItem={handleAddItem()}
-                            onClose={() => setIsModalVisible(false)} 
-                    /> : null} 
+                <Modal 
+                    valueId={value}
+                    anime={anime} 
+                    image={image}
+                    title={title}
+                    position={ranking}
+                    eps={eps}
+                    synopse={synopse}
+                    averageRating={averageRating}
+                    // handleAddItem={handleAddItem()}
+                    onClose={() => setIsModalVisible(false)} 
+                /> : null} 
         </div>
     )
 
