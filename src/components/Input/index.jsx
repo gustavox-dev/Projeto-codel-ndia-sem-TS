@@ -3,7 +3,7 @@ import './styles.css'
 import useDebounce from './Debounce'
 import searchIcon from '../../assets/images/search.png'
 
-const SearchInput = ({value, onChange, children, onClose}) => {
+const SearchInput = ({value, onChange, children}) => {
     const [displayValue, setDisplayValue] = useState(value)
     const debouncedChange = useDebounce(onChange, 500)
 
@@ -25,7 +25,6 @@ const SearchInput = ({value, onChange, children, onClose}) => {
                     type="search"
                     value={displayValue}
                     onChange={handleChange}
-                    onClick={onClose}
                 />
             </div>
             <div className='children-content'>

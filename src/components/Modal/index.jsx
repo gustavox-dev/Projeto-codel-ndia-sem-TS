@@ -1,36 +1,27 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './styles.css'
-import ButtonComponent from '../../components/Button'
+import ButtonComponent from '../Button'
 import StarIcon from '../../assets/images/star.png'
 
 // 1 - Criar um Array vazio para inserir os dados do localStorage. 
 function Modal({ valueId, onClose, image, title, position, eps, synopse, averageRating }) {
-    // let favorites = JSON.parse(localStorage.getItem('favorites')) || []
     
-    /*
-        2- Criar uma função que quando ocorrer o evento de click, a função será renderizada no 'onClick' selecionando os dados que eu preciso.
-    EX: const titleSource = animes.attributes.canonicalTitle
-    */
-
-
     const handleOutsideClick = e => {
-        if (e.target.id === valueId) {
-            return onClose
-        }
+        console.log("valor do evento: ", e.target)
+        if (e.target.id === valueId) onClose()
     }
 
-    // id, posterImage.medium, canonicalTitle, position, eps, synopse
     return (
-        <div key={valueId} id={valueId} className='firedev-modal' onClick={handleOutsideClick}>
+        <div key={valueId}  className='firedev-modal' onClick={handleOutsideClick}>
 
-            <div className='firedev-modal-wrapper'>
+            <div className='firedev-modal-wrapper' id={valueId}>
 
                 <div className='firedev-img'>
                     <img src={image} alt={title} />
                 </div>
 
                 <div className='firedev-modal-content'>
-                <button className='btn-fd' onClick={onClose}>X</button>
+                    <button  className='btn-fd' onClick={onClose}>X</button>
 
                     <div className='header-text-modal'>
                         <h3>{title}</h3>    
